@@ -1,24 +1,68 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#75d978" />
-    <meta name="description" content="Business Analytics student turning messy information into clear, useful decisions." />
-    <meta property="og:title" content="Ethan Ong — Data, Design & Determination" />
-    <meta property="og:description" content="Business Analytics student turning messy information into clear, useful decisions." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://assistacat.github.io/" />
-    <meta property="og:image" content="https://assistacat.github.io/og.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Ethan Ong — Data, Design & Determination" />
-    <meta name="twitter:description" content="Business Analytics student turning messy information into clear, useful decisions." />
-    <meta name="twitter:image" content="https://assistacat.github.io/og.png" />
-    <link rel="icon" href="/favicon.svg" />
-    <title>Ethan Ong — Data, Design & Determination</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Ethan Ong’s portfolio of analytics, automation and software projects.">
+<title>Ethan Ong — Marketing &amp; HR Analytics</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar"><a class="brand" href="#main"><span>EO</span> Ethan Ong</a><nav aria-label="Main navigation"><a href="#work">Analytics work</a><a href="#projects">Selected projects</a><a href="#experience">Experience</a><a href="#contact">Contact</a></nav><a class="resume" href="Ethan_Ong_CV.pdf">Résumé ↗</a></header>
+<main id="main" tabindex="-1">
+<section class="hero" aria-labelledby="intro">
+<div><p class="label"><i></i> MARKETING &amp; HR ANALYTICS</p><h1 id="intro">Ethan Ong<span>.</span></h1><p class="intro">Business Analytics student at the National University of Singapore.</p><p class="bio">My work includes analysing subscription patterns for marketing and building reporting and workflows for HR teams.</p><a class="button" href="#work">View analytics work ↓</a><a class="secondary" href="Ethan_Ong_CV.pdf">View résumé ↗</a></div>
+<figure class="hero-photo"><img src="ethan-ong.jpg" alt="Ethan Ong on a rocky coastline" width="1280" height="960" fetchpriority="high"></figure>
+</section>
+<section class="section" id="work" aria-labelledby="work-title">
+<p class="label">01 / ANALYTICS WORK</p><h2 id="work-title">Marketing and HR analytics.</h2>
+<div class="cases">
+<article id="marketing-analysis"><p class="label">01 / SPH MEDIA · MARKETING</p><h3>Subscription analysis</h3><p>Analysed over 58,000 subscriptions to identify buying patterns across publications and school segments and inform B2B pricing and targeting.</p><p class="tags">R · Tableau</p></article>
+<article id="hr-analysis"><p class="label">02 / MURATA · HR ANALYTICS</p><h3>Attendance reporting pipeline</h3><p>I built a Python pipeline that combined 131 leave files with employee shift calendars and calculated monthly attendance ratios for HR reporting in Power BI.</p>
+<figure class="attendance-flow">
+<figcaption>How the attendance report came together</figcaption>
+<ol>
+<li><strong>Combine records</strong><span>131 leave files and employee shift calendars</span></li>
+<li><strong>Calculate monthly attendance</strong><span>Python checks the data and calculates attendance ratios</span></li>
+<li><strong>Prepare the report</strong><span>Monthly figures for HR reporting in Power BI</span></li>
+</ol>
+</figure>
+<p class="tags">Python · Power BI</p></article>
+<article><p class="label">03 / MURATA · AUTOMATION</p><h3>Coaching approvals workflow</h3><p>Automated submissions, approvals, learning records and progress tracking for an employee development process supporting more than 2,000 people.</p><p class="tags">Power Apps · SharePoint</p></article>
+</div>
+</section>
+<section class="section lab" id="projects" aria-labelledby="projects-title">
+<p class="label">02 / SELECTED PROJECTS</p><h2 id="projects-title">School and side projects.</h2><p class="section-intro">Coursework, a datathon prototype, and side projects you can explore through their public repositories.</p>
+<div class="projects">
+<article id="product-search" tabindex="-1" class="featured-project"><div class="motif classification" aria-hidden="true"><b>SEARCH</b><span>→</span><b>RANK</b><span>→</span><b>TEST</b></div><p class="label">BT4222 · TEAM COURSEWORK</p><h3>Personalising online product search</h3><p>When two shoppers search for the same thing, should they see the same results? Our team explored how an online store could reorder its search results for each shopper. We compared approaches that used the search terms, product details, and the shopper’s earlier clicks and purchases to decide which products should appear first.</p>
+<p><strong>My contribution.</strong> I improved how we used shoppers’ past activity and reran the evaluation on 20,000 shoppers. I also compared a simpler model with a more complex one using the same information. Both performed similarly at putting relevant products in the top ten.</p>
+<figure class="search-example" aria-labelledby="search-example-caption">
+<figcaption id="search-example-caption">Illustrative example · Same search, different rankings</figcaption>
+<p class="search-query">Search <strong>“headphones”</strong></p>
+<div class="search-rankings">
+<div><p><strong>Shopper A</strong><br>Previously viewed gaming gear</p><ol><li>Gaming headset</li><li>Noise-cancelling headphones</li></ol></div>
+<div><p><strong>Shopper B</strong><br>Previously viewed travel gear</p><ol><li>Noise-cancelling headphones</li><li>Gaming headset</li></ol></div>
+</div>
+</figure></article>
+<article class="featured-project"><div class="motif route" aria-hidden="true"><b>MAP</b><span>·····</span><b>CHECK</b><span>·····</span><b>STUDY</b></div><p class="label">BT3103 · TEAM COURSEWORK</p><h3>StudySpot</h3><figure class="study-shot"><img src="studyspot.png" alt="StudySpot showing a map of NUS with marked study locations and a search panel" width="1280" height="720" loading="lazy"><figcaption>StudySpot campus map, captured from the running app in signed-out mode.</figcaption></figure><p>Our team built a campus map for students who want to find a quiet study spot before walking across campus. Students can report how noisy or crowded a place is and see what others have reported.</p><p><strong>My contribution.</strong> I turned student reports into an average noise rating for each location. I used those ratings to colour the pins on the map and list the quietest spots first.</p><a href="https://github.com/BT3103AppDev1/L1_Group_19">View repository ↗</a></article>
+<article><div class="motif classification" aria-hidden="true"><b>ASK</b><span>→</span><b>OBSERVE</b><span>→</span><b>COMPARE</b></div><p class="label">BT4211 · TEAM COURSEWORK</p><h3>What people say vs. what they choose</h3><p>Our team used speed-dating records to compare what people said they looked for in a partner with whom they chose to see again. We used that example to explore when marketers should check survey answers against actual choices.</p><a href="https://github.com/KTAP8/BrainOverLooksBT4211">View repository ↗</a></article>
+<article><div class="motif route" aria-hidden="true"><b>UPLOAD</b><span>·····</span><b>GROUP</b><span>·····</span><b>COMPARE</b></div><p class="label">NUS DATATHON 2026 · TEAM PROTOTYPE</p><h3>Finding comparable companies</h3><p>Our datathon team built a tool that takes a spreadsheet of companies and groups similar businesses. For example, you can pick a company and compare its revenue and headcount with those of its peers.</p><a href="https://github.com/wk142003/rowlet-regression">View repository ↗</a></article>
+<article><div class="motif classification" aria-hidden="true"><b>REVIEW</b><span>→</span><b>CLASSIFY</b><span>→</span><b>EVALUATE</b></div><p class="label">PYTHON · LLM EVALUATION</p><h3>FreddyFazbytes</h3><p>The project tested whether AI could flag Google Maps reviews for moderation. We cleaned the review text, tried different instructions and models, and checked their predictions against labelled examples.</p><a href="https://github.com/assistacat/FreddyFazbytes">View repository ↗</a></article>
+<article><div class="motif route" aria-hidden="true"><b>FIND</b><span>·····</span><b>PIN</b><span>·····</span><b>PLAN</b></div><p class="label">REACT · FLASK</p><h3>TrekSavvy</h3><p>TrekSavvy lets you find places on a map, save them as pins, and turn those pins into a trip itinerary. You can also export the pins to use in other mapping tools.</p><a href="https://github.com/assistacat/treksavvy">View repository ↗</a></article>
+</div>
+</section>
+<section class="section" id="experience" aria-labelledby="experience-title">
+<p class="label">03 / EXPERIENCE</p><h2 id="experience-title">Where I’ve worked.</h2>
+<ul class="timeline">
+<li><span>2026</span><strong>Murata Electronics Singapore</strong><span>HR Data Analytics Intern</span></li>
+<li><span>2026</span><strong>TÜV SÜD</strong><span>Global Marketing Intern</span></li>
+<li><span>2025–26</span><strong>NUS Computing</strong><span>Data Management &amp; Visualisation TA</span></li>
+<li><span>2025</span><strong>SPH Media</strong><span>B2B Marketing Analytics Intern</span></li>
+</ul>
+
+</section>
+</main>
+<footer id="contact"><div class="footer-content"><p class="label">04 / CONTACT</p><h2>Let’s talk.</h2><div class="links"><a href="mailto:ethanong@u.nus.edu">Email ↗</a><a href="https://www.linkedin.com/in/ethanjohnong">LinkedIn ↗</a><a href="https://github.com/assistacat">GitHub ↗</a><a href="Ethan_Ong_CV.pdf">Résumé ↗</a></div><p class="credit">Ethan Ong · Singapore</p></div></footer>
+</body>
 </html>
