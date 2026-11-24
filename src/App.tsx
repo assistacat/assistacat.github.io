@@ -53,7 +53,7 @@ const internshipSteps = [
   [
     ['Submit', 'Employees record activities, such as external courses or career conversations, through Microsoft Forms.'],
     ['Manager verifies', 'Power Automate sends the submission to the employee’s manager for verification.'],
-    ['Update progress', 'The tracking record updates after verification. SharePoint permissions give managers access to their teams’ submissions and HR access across the scheme.'],
+    ['Check progress', 'The tracking record updates after manager verification. Employees can check their progress in the Power Apps app I built.'],
   ],
 ];
 
@@ -67,6 +67,48 @@ function WorkDiagram({ project }: { project: number }) {
     </div>
     <div className="work-demo-readout"><span className="readout-icon" aria-hidden="true">↳</span><p className="work-demo-detail" aria-live="polite">{steps[step][1]}</p></div>
   </div>;
+}
+
+
+function TrackerExample() {
+  const [verified, setVerified] = useState(false);
+  return (
+    <figure className="tracker-example">
+      <figcaption>Illustrative tracker · Fictional employee and activities</figcaption>
+      <div className="tracker-scroll" tabIndex={0} role="region" aria-label="Example employee progress tracker">
+        <table>
+          <caption className="tracker-caption">Progress updates after manager verification</caption>
+          <thead><tr>
+            <th scope="col">Employee</th><th scope="col">Department</th>
+            <th scope="col">Manager</th><th scope="col">External course</th>
+            <th scope="col">Career conversation</th><th scope="col">Progress</th>
+          </tr></thead>
+          <tbody><tr>
+            <th scope="row">Alex Tan</th><td>Sample department</td><td>Jamie Lee</td>
+            <td><span className="tracker-status is-verified">Verified · 10 Dec</span></td>
+            <td><span className={verified ? 'tracker-status is-verified' : 'tracker-status'}>
+              {verified ? 'Verified · 12 Dec' : 'Awaiting verification'}
+            </span></td>
+            <td><div className="tracker-progress" aria-live="polite">
+              <strong>{verified ? '100%' : '50%'}</strong>
+              <progress max={100} value={verified ? 100 : 50} aria-label="Example employee progress" />
+            </div></td>
+          </tr></tbody>
+        </table>
+      </div>
+      <div className="tracker-actions">
+        <button type="button" disabled={verified} onClick={() => setVerified(true)}>
+          {verified ? 'Activity verified' : 'Verify career conversation'}
+        </button>
+        {verified && <button type="button" className="tracker-reset" onClick={() => setVerified(false)}>Reset example</button>}
+      </div>
+      <p className="tracker-feedback" role="status">
+        {verified
+          ? 'Both activities are verified. The tracker updates progress to 100%.'
+          : 'Act as the manager and verify the second activity to see progress update.'}
+      </p>
+    </figure>
+  );
 }
 
 function SubscriptionDemo() {
@@ -126,16 +168,18 @@ export default function Home() {
         <div className="case-grid">
           <article className="case-card case-green"><div className="case-head"><span>01 · MURATA / HR ANALYTICS</span><Medal>HR</Medal></div><WorkDiagram project={0} /><h3>Attendance reporting pipeline</h3><p>At Murata, I worked with 131 leave files and employee shift calendars. I built the Python pipeline that turned them into monthly attendance figures.</p><div className="case-foot"><span>PYTHON</span><span>POWER BI</span><span>HR REPORTING</span></div></article>
           <article className="case-card case-yellow"><div className="case-head"><span>02 · MURATA / AUTOMATION</span><Medal>FLOW</Medal></div><WorkDiagram project={1} /><h3>Teaching myself Power Automate</h3>
-          <p>HR asked me to digitise progress tracking for a new employee development scheme. I taught myself Power Automate and built the workflow from submission to manager verification.</p>
+          <p>HR asked me to digitise progress tracking for a new employee development scheme. I taught myself Power Automate, built the verification workflow, and made a Power Apps app where employees could check their progress.</p>
           <details className="entry-note murata-entry">
             <summary>Read my Murata entry</summary>
             <p>Employees could complete activities such as external courses or career conversations with their managers. HR needed a way to record their progress and get their managers to verify it.</p>
             <p>I came across Power Automate and decided to give it a go because it connected with the Microsoft tools the company already used. I taught myself as I built.</p>
             <p>Getting the logic right was the hardest part. I built it brick by brick, like a puzzle.</p>
-            <p>I also had to get the SharePoint permissions right. Managers could see their own teams’ submissions, while HR could see everyone’s.</p>
+            <TrackerExample />
+            <p>I also built a Power Apps app so employees could check their own progress.</p>
+            <p>I had to get the SharePoint permissions right. Managers could see their own teams’ submissions, while HR could see everyone’s.</p>
             <p>Before leaving, I documented how the flow worked and showed HR how to use and maintain it.</p>
             <p>What I’m most proud of is that I learnt the tools myself, built the whole workflow, and HR kept using it after I handed it over.</p>
-          </details><div className="case-foot"><span>POWER AUTOMATE</span><span>MICROSOFT FORMS</span><span>SHAREPOINT</span></div></article>
+          </details><div className="case-foot"><span>POWER AUTOMATE</span><span>POWER APPS</span><span>SHAREPOINT</span></div></article>
           <article className="case-card case-blue"><div className="case-head"><span>03 · SPH MEDIA / MARKETING</span><Medal>58K</Medal></div><SubscriptionDemo /><h3>B2B subscription analysis</h3><p>At SPH Media, I analysed 58,000+ subscriptions in R and Tableau to help the B2B team understand buying patterns.</p><div className="case-foot"><span>R</span><span>TABLEAU</span><span>MARKETING</span></div></article>
         </div>
       </section>

@@ -706,3 +706,27 @@
 
 .case-card .murata-entry { order: 3; margin-top: 12px; margin-bottom: 0; }
 .murata-entry p { max-width: 52ch; }
+
+.tracker-example {
+  margin: 18px 0;
+  padding: 12px;
+  background: #edf4ef;
+  border: 1px solid #a7c1b5;
+  border-radius: 12px;
+}
+.tracker-example > figcaption { font-size: 12px; font-weight: 700; color: #385345; margin-bottom: 10px; }
+.tracker-scroll { overflow-x: auto; border: 1px solid #a7b9a9; border-radius: 8px; background: #fffdf7; }
+.tracker-example table { border-collapse: collapse; min-width: 620px; width: 100%; text-align: left; font-size: 12px; }
+.tracker-example .tracker-caption { text-align: left; padding: 10px; color: #385345; }
+.tracker-example th, .tracker-example td { padding: 10px; border-top: 1px solid #d5e0d1; vertical-align: top; }
+.tracker-example thead { background: #dcebdc; }
+.tracker-status { color: #77551b; }
+.tracker-status.is-verified { color: #205c47; }
+.tracker-progress { display: grid; gap: 6px; min-width: 64px; }
+.tracker-progress progress { width: 70px; height: 9px; accent-color: #205c47; }
+.tracker-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+.tracker-actions button { min-height: 44px; padding: 8px 12px; border: 1px solid #7f6331; border-radius: 8px; background: #f8dc84; color: #263831; font: 700 12px var(--display); cursor: pointer; }
+.tracker-actions button:disabled { background: #dcebdc; border-color: #809b8a; cursor: default; }
+.tracker-actions .tracker-reset { background: #fffdf7; border-color: #809b8a; }
+.tracker-example .tracker-feedback { font-size: 12px; margin: 10px 0 0; }
+.murata-entry { min-width: 0; }
