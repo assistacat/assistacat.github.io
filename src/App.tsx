@@ -1,22 +1,22 @@
 import { useState } from 'react';
 import JapanMap from './JapanMap';
 const projects = [
-  { no: '01', type: 'TEAM PROJECT · BT3103', title: 'StudySpot', tag: 'CAMPUS LIFE', body: 'Our team built a campus study map. My part was turning student reports into noise ratings, coloured pins and a list of quieter spots.', href: 'https://github.com/BT3103AppDev1/L1_Group_19', color: 'mint' },
-  { no: '02', type: 'TEAM PROJECT · BT4222', title: 'Personalised product search', tag: 'RECOMMENDER SYSTEMS', body: 'Should two shoppers see the same results? I improved how we used past activity, then evaluated the rankings across 20,000 shoppers.', color: 'peach' },
-  { no: '03', type: 'TEAM PROJECT · BT4211', title: 'Stated preferences vs. actual choices', tag: 'CONSUMER INSIGHT', body: 'Our team used speed-dating records to compare what people said they wanted with who they chose to see again.', href: 'https://github.com/KTAP8/BrainOverLooksBT4211', color: 'butter' },
-  { no: '04', type: 'NUS DATATHON 2026', title: 'Company peer comparisons', tag: 'DATA STORYTELLING', body: 'For the NUS datathon, our team built a tool to group similar companies and compare their revenue and headcount.', href: 'https://github.com/wk142003/rowlet-regression', color: 'sky' },
-  { no: '05', type: 'PYTHON · LLM EVALUATION', title: 'FreddyFazbytes', tag: 'TEXT ANALYSIS', body: 'We tested whether AI could flag Google Maps reviews for moderation, comparing prompts and models against labelled examples.', href: 'https://github.com/assistacat/FreddyFazbytes', color: 'cream' },
+  { no: '01', type: 'TEAM PROJECT · BT3103', title: 'StudySpot', tag: 'CAMPUS LIFE', body: 'Campus map for finding study spaces using live noise and crowd reports, with searchable locations and noise-based filters.', href: 'https://github.com/BT3103AppDev1/L1_Group_19', color: 'mint' },
+  { no: '02', type: 'TEAM PROJECT · BT4222', title: 'Personalised product search', tag: 'RECOMMENDER SYSTEMS', body: 'Personalised product rankings using search terms, product details and shopper history, evaluated across 20,000 shoppers.', color: 'peach' },
+  { no: '03', type: 'TEAM PROJECT · BT4211', title: 'Stated preferences vs. actual choices', tag: 'CONSUMER INSIGHT', body: 'Python analysis of stated preferences and actual choices using fixed-effects models and a gradient-boosting cross-check.', href: 'https://github.com/KTAP8/BrainOverLooksBT4211', color: 'butter' },
+  { no: '04', type: 'NUS DATATHON 2026', title: 'Company peer comparisons', tag: 'DATA STORYTELLING', body: 'Streamlit app that cleans company data, groups peers with K-means, and visualises comparisons with PCA and radar charts.', href: 'https://github.com/wk142003/rowlet-regression', color: 'sky' },
+  { no: '05', type: 'PYTHON · LLM EVALUATION', title: 'FreddyFazbytes', tag: 'TEXT ANALYSIS', body: 'Python pipeline for cleaning Google Maps reviews, testing LLM moderation prompts and evaluating predictions against labelled examples.', href: 'https://github.com/assistacat/FreddyFazbytes', color: 'cream' },
   { no: '06', type: 'REACT · FLASK', title: 'TrekSavvy', tag: 'TRAVEL · MAPS', body: 'TrekSavvy brings saved map pins into a trip itinerary, with an export for using them in other mapping tools.', href: 'https://github.com/assistacat/treksavvy', color: 'mint' },
 ];
 
 const projectNotes: Record<string, [string, string]> = {
   "01": [
-    "My part",
-    "I calculated the average noise rating for each location, used it to colour the map pins, and sorted the quietest places first."
+    "How it works",
+    "Vue 3 handles the interface, Firebase Firestore streams submission updates, and Leaflet displays the campus map. Noise ratings drive pin colours and sorting."
   ],
   "02": [
-    "What I compared",
-    "I tested a simpler model and a more complex one using the same information. Both performed similarly at putting relevant products in the top ten."
+    "Ranking approach",
+    "The project compared ranking approaches using the same shopper information and measured how well each placed relevant products in the top ten."
   ],
   "03": [
     "The question behind it",
@@ -33,6 +33,40 @@ const projectNotes: Record<string, [string, string]> = {
   "06": [
     "What you can do",
     "Find places on a map, save them as pins, and arrange those pins into an itinerary."
+  ]
+};
+
+const projectSkills: Record<string, string[]> = {
+  "01": [
+    "Vue 3",
+    "Firebase",
+    "Leaflet"
+  ],
+  "02": [
+    "Recommender systems",
+    "Feature engineering",
+    "Ranking evaluation"
+  ],
+  "03": [
+    "Python",
+    "Fixed-effects models",
+    "scikit-learn"
+  ],
+  "04": [
+    "Python",
+    "Streamlit",
+    "K-means",
+    "Plotly"
+  ],
+  "05": [
+    "Python",
+    "Prompt engineering",
+    "Model evaluation"
+  ],
+  "06": [
+    "React",
+    "Flask",
+    "Mapping"
   ]
 };
 
@@ -189,7 +223,7 @@ export default function Home() {
         <div className="project-grid">{projects.map((project) => <article className={`project-card ${project.color}`} key={project.no}>
           <div className="project-head"><Medal>{project.no}</Medal><span>{project.type}</span><span className="project-tag">{project.tag}</span></div>
           {project.no === '01' && <figure className="project-image"><img src="/studyspot.png" alt="StudySpot campus map with marked study locations and a search panel" loading="lazy" /><figcaption>The campus map our team built.</figcaption></figure>}
-          <h3>{project.title}</h3>{project.no === '02' && <RankingDemo />}<p>{project.body}</p><details className="entry-note"><summary>{projectNotes[project.no][0]}</summary><p>{projectNotes[project.no][1]}</p></details>{project.href && <a href={project.href} target="_blank" rel="noreferrer" aria-label={`View repository for ${project.title}`}>View repository <span aria-hidden="true">↗</span></a>}<span className="project-number" aria-hidden="true">{project.no}</span>
+          <h3>{project.title}</h3>{project.no === '02' && <RankingDemo />}<p>{project.body}</p><ul className="project-skills" aria-label="Technical skills">{projectSkills[project.no].map(skill => <li key={skill}>{skill}</li>)}</ul><details className="entry-note"><summary>{projectNotes[project.no][0]}</summary><p>{projectNotes[project.no][1]}</p></details>{project.href && <a href={project.href} target="_blank" rel="noreferrer" aria-label={`View repository for ${project.title}`}>View repository <span aria-hidden="true">↗</span></a>}<span className="project-number" aria-hidden="true">{project.no}</span>
         </article>)}</div>
       </section>
 

@@ -730,3 +730,6 @@
 .tracker-actions .tracker-reset { background: #fffdf7; border-color: #809b8a; }
 .tracker-example .tracker-feedback { font-size: 12px; margin: 10px 0 0; }
 .murata-entry { min-width: 0; }
+
+.project-skills { display: flex; gap: 6px; flex-wrap: wrap; list-style: none; padding: 0; margin: 0 0 16px; position: relative; z-index: 1; }
+.project-skills li { border: 1px solid #a7b9a9; border-radius: 7px; padding: 4px 7px; background: #fffdf7; color: #385345; font-size: 11px; }
