@@ -3,8 +3,8 @@ import JapanMap from './JapanMap';
 const projects = [
   { no: '01', type: 'TEAM PROJECT · BT3103', title: 'StudySpot', tag: 'CAMPUS LIFE', body: 'Built noise ratings from student reports to colour campus map pins and rank quieter study spots.', href: 'https://github.com/BT3103AppDev1/L1_Group_19', color: 'mint' },
   { no: '02', type: 'TEAM PROJECT · BT4222', title: 'Personalised product search', tag: 'RECOMMENDER SYSTEMS', body: 'Improved how shopper activity informed product rankings and evaluated results across 20,000 shoppers.', color: 'peach' },
-  { no: '03', type: 'TEAM PROJECT · BT4211', title: 'What people say vs. choose', tag: 'CONSUMER INSIGHT', body: 'Compared stated preferences with actual choices using speed-dating records.', href: 'https://github.com/KTAP8/BrainOverLooksBT4211', color: 'butter' },
-  { no: '04', type: 'NUS DATATHON 2026', title: 'Finding comparable companies', tag: 'DATA STORYTELLING', body: 'Team prototype that groups similar companies for revenue and headcount comparisons.', href: 'https://github.com/wk142003/rowlet-regression', color: 'sky' },
+  { no: '03', type: 'TEAM PROJECT · BT4211', title: 'Stated preferences vs. actual choices', tag: 'CONSUMER INSIGHT', body: 'Compared stated preferences with actual choices using speed-dating records.', href: 'https://github.com/KTAP8/BrainOverLooksBT4211', color: 'butter' },
+  { no: '04', type: 'NUS DATATHON 2026', title: 'Company peer comparisons', tag: 'DATA STORYTELLING', body: 'Team prototype that groups similar companies for revenue and headcount comparisons.', href: 'https://github.com/wk142003/rowlet-regression', color: 'sky' },
   { no: '05', type: 'PYTHON · LLM EVALUATION', title: 'FreddyFazbytes', tag: 'TEXT ANALYSIS', body: 'Evaluated AI review moderation by testing prompts and models against labelled Google Maps reviews.', href: 'https://github.com/assistacat/FreddyFazbytes', color: 'cream' },
   { no: '06', type: 'REACT · FLASK', title: 'TrekSavvy', tag: 'TRAVEL · MAPS', body: 'Trip planner with saved map pins, itineraries and location exports.', href: 'https://github.com/assistacat/treksavvy', color: 'mint' },
 ];
@@ -47,7 +47,7 @@ function SubscriptionDemo() {
   return <div className="work-demo">
     <strong className="work-demo-stat">58,000+<span>subscriptions analysed</span></strong>
     <button className="work-detail-toggle" type="button" aria-expanded={detail} onClick={() => setDetail(!detail)}>
-      What did I look for? <span aria-hidden="true">{detail ? '−' : '+'}</span>
+      Analysis focus <span aria-hidden="true">{detail ? '−' : '+'}</span>
     </button>
     {detail && <p className="work-demo-detail">Buying patterns across publications and school segments to inform B2B pricing and targeting.</p>}
   </div>;
@@ -115,12 +115,12 @@ export default function Home() {
       <JapanMap />
       <section className="about section-pad" id="about" aria-labelledby="about-title">
         <div className="about-title"><p className="eyebrow"><Medal>03</Medal> BACKGROUND</p><h2 id="about-title">About me</h2></div>
-        <div className="about-copy"><p>I’m studying Business Analytics at the National University of Singapore, with a minor in Japanese Language Studies. Along the way, I’ve worked across HR, marketing, education and automation.</p><p>Outside work, I collect ideas from travel, maps, language and the playful worlds of anime and games. </p><div className="interest-chips"><span>Japanese language</span><span>Maps &amp; travel</span><span>Anime &amp; games</span><span>Making things</span></div></div>
+        <div className="about-copy"><p>I study Business Analytics at the National University of Singapore, with a minor in Japanese Language Studies. My experience includes HR reporting at Murata, B2B marketing analytics at SPH Media, and teaching data management and visualisation.</p><p>Outside work, I enjoy planning trips, studying Japanese, and watching anime. </p><div className="interest-chips"><span>Japanese language</span><span>Maps &amp; travel</span><span>Anime &amp; games</span><span>Making things</span></div></div>
       </section>
 
       <section className="experience section-pad" id="experience" aria-labelledby="experience-title"><div className="experience-heading"><p className="eyebrow"><Medal>04</Medal> INTERNSHIPS &amp; TEACHING</p><h2 id="experience-title">Experience</h2></div><div className="experience-list">{experience.map(([year, company, role], index) => <article key={company}><span className="experience-year">{year}</span><h3>{company}</h3><p>{role}</p><Medal>{`0${index + 1}`}</Medal></article>)}</div></section>
 
-      <footer className="contact section-pad" id="contact"><div><p className="eyebrow"><Medal>05</Medal> CONTACT</p><h2>Get in touch</h2><p className="contact-summary">I’d love to hear what you’re working on.</p><a className="button contact-button" href="mailto:ethanong@u.nus.edu">Email Ethan <span>↗</span></a></div><div className="contact-links"><a href="https://www.linkedin.com/in/ethanjohnong" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a><a href="https://github.com/assistacat" target="_blank" rel="noreferrer">GitHub <span>↗</span></a><a href="/Ethan_Ong_CV.pdf" target="_blank" rel="noreferrer">Résumé <span>↗</span></a><p>ETHAN ONG · SINGAPORE · 2026</p></div></footer>
+      <footer className="contact section-pad" id="contact"><div><p className="eyebrow"><Medal>05</Medal> CONTACT</p><h2>Get in touch</h2><p className="contact-summary">For job opportunities, contact me by email or LinkedIn.</p><a className="button contact-button" href="mailto:ethanong@u.nus.edu">Email Ethan <span>↗</span></a></div><div className="contact-links"><a href="https://www.linkedin.com/in/ethanjohnong" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a><a href="https://github.com/assistacat" target="_blank" rel="noreferrer">GitHub <span>↗</span></a><a href="/Ethan_Ong_CV.pdf" target="_blank" rel="noreferrer">Résumé <span>↗</span></a><p>ETHAN ONG · SINGAPORE · 2026</p></div></footer>
     </main>
   </>;
 }

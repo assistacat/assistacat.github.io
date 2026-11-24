@@ -165,7 +165,7 @@ export default function JapanMap() {
     <header className="japan-heading">
       <div>
         <h2 id="japan-title">Explore Japan</h2>
-        <p>A map of landscapes I’d like to explore, inspired by my minor in Japanese Language Studies.</p>
+        <p>Scenic places I’ve saved for future trips to Japan.</p>
       </div>
       <span className="japan-atlas-mark" lang="ja" aria-hidden="true">日本</span>
     </header>
@@ -231,7 +231,7 @@ export default function JapanMap() {
           <option value="">All Japan</option>
           {shapes.map(shape => shape.name).sort().map(name => <option key={name}>{name}</option>)}
         </select>
-        {!highlights.length && <p>I haven’t added a scenic spot for this prefecture yet. Try a nearby one.</p>}
+        {!highlights.length && <p>No saved scenic spots here yet. Select another prefecture.</p>}
         {visibleHighlights.map(place => <article className="japan-highlight" key={place.url}>
           <div className="japan-spot-meta"><small>{place.prefecture}</small>
             {photos[place.name] && <span className="japan-photo-marker" aria-label="Photo available" />}
