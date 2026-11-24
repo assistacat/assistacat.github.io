@@ -703,3 +703,6 @@
 
 .project-card > .project-head { flex-shrink: 0; }
 .project-card > .project-image { width: 100%; flex-shrink: 0; }
+
+.case-card .murata-entry { order: 3; margin-top: 12px; margin-bottom: 0; }
+.murata-entry p { max-width: 52ch; }
