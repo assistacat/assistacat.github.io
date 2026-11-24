@@ -733,3 +733,24 @@
 
 .project-skills { display: flex; gap: 6px; flex-wrap: wrap; list-style: none; padding: 0; margin: 0 0 16px; position: relative; z-index: 1; }
 .project-skills li { border: 1px solid #a7b9a9; border-radius: 7px; padding: 4px 7px; background: #fffdf7; color: #385345; font-size: 11px; }
+
+.project-mini-demo {
+  width: 100%;
+  margin: 14px 0;
+  padding: 12px;
+  background-color: #edf4ef;
+  background-image: linear-gradient(#446c740a 1px, transparent 1px), linear-gradient(90deg, #446c740a 1px, transparent 1px);
+  background-size: 20px 20px;
+  border: 1px solid #a7c1b5;
+  border-radius: 15px;
+  position: relative;
+  z-index: 1;
+}
+.project-mini-demo .demo-caption { margin: 0 0 10px; font-size: 11px; color: #496456; }
+.project-mini-demo .work-demo-controls { grid-template-columns: repeat(auto-fit, minmax(76px, 1fr)); }
+.project-mini-demo .work-demo-controls button { min-height: 44px; justify-content: center; }
+.demo-result { display: flex; align-items: center; gap: 10px; min-height: 82px; margin: 12px 0 0; font-size: 13px; line-height: 1.5; color: #385345; }
+.demo-result-symbol { display: grid; place-items: center; flex: none; width: 30px; height: 30px; border-radius: 50%; border: 1px solid #809b8a; background: #fffdf7; color: #205c47; font-weight: 800; }
+.itinerary-route { list-style: none; padding: 0; margin: 12px 0 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.itinerary-route li { padding: 6px 9px; background: #fff2c3; border: 1px solid #b29449; border-radius: 8px; font-size: 12px; }
+.itinerary-route li + li::before { content: '→ '; }

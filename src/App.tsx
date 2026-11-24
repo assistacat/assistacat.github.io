@@ -169,6 +169,62 @@ function RankingDemo() {
   </div>;
 }
 
+
+function ProjectDemo({ id }: { id: string }) {
+  const [choice, setChoice] = useState(0);
+  const [pins, setPins] = useState<string[]>([]);
+  const examples: Record<string, { label: string; options: string[]; results: string[] }> = {
+    '01': {
+      label: 'Example noise filter',
+      options: ['Quiet', 'Some conversation', 'Busy'],
+      results: ['Library · Quiet study zone', 'Study lounge · Some conversation', 'Café · Busy social space'],
+    },
+    '03': {
+      label: 'Example preference comparison',
+      options: ['Survey answer', 'Observed choice'],
+      results: ['Says they value: intelligence', 'Chooses to meet again: compare with survey answer'],
+    },
+    '04': {
+      label: 'Example peer grouping',
+      options: ['Retail', 'Manufacturing'],
+      results: ['Retail company → compare with other retailers', 'Manufacturer → compare with other manufacturers'],
+    },
+    '05': {
+      label: 'Example moderation decision',
+      options: ['Relevant review', 'Off-topic text'],
+      results: ['“The park has shaded walking paths.” → relevant', '“Follow my account for offers.” → flag for review'],
+    },
+  };
+  if (id === '06') {
+    const destinations = ['Tokyo', 'Kyoto', 'Osaka'];
+    return <div className="project-mini-demo">
+      <p className="demo-caption">Illustrative itinerary · Add a place</p>
+      <div className="work-demo-controls">{destinations.map(name =>
+        <button type="button" key={name} aria-pressed={pins.includes(name)}
+          onClick={() => setPins(current => current.includes(name) ? current.filter(pin => pin !== name) : [...current, name])}>
+          {pins.includes(name) ? '✓ ' : '+ '}{name}
+        </button>)}</div>
+      <ol className="itinerary-route" aria-live="polite">
+        {pins.map(name => <li key={name}>{name}</li>)}
+      </ol>
+      {!pins.length && <p className="demo-result">Select places to build a route.</p>}
+    </div>;
+  }
+  const example = examples[id];
+  if (!example) return null;
+  return <div className="project-mini-demo">
+    <p className="demo-caption">Illustrative example · {example.label}</p>
+    <div className="work-demo-controls" role="group" aria-label={example.label}>
+      {example.options.map((option, index) => <button type="button" key={option}
+        aria-pressed={choice === index} onClick={() => setChoice(index)}>{option}</button>)}
+    </div>
+    <div className="demo-result" aria-live="polite">
+      <span className="demo-result-symbol" aria-hidden="true">{id === '01' ? '●' : id === '04' ? '↔' : id === '05' ? (choice === 0 ? '✓' : '!') : '⇄'}</span>
+      <span>{example.results[choice]}</span>
+    </div>
+  </div>;
+}
+
 function Medal({ children }: { children: string }) {
   return <span className="medal" aria-hidden="true"><span>{children}</span></span>;
 }
@@ -223,7 +279,7 @@ export default function Home() {
         <div className="project-grid">{projects.map((project) => <article className={`project-card ${project.color}`} key={project.no}>
           <div className="project-head"><Medal>{project.no}</Medal><span>{project.type}</span><span className="project-tag">{project.tag}</span></div>
           {project.no === '01' && <figure className="project-image"><img src="/studyspot.png" alt="StudySpot campus map with marked study locations and a search panel" loading="lazy" /><figcaption>The campus map our team built.</figcaption></figure>}
-          <h3>{project.title}</h3>{project.no === '02' && <RankingDemo />}<p>{project.body}</p><ul className="project-skills" aria-label="Technical skills">{projectSkills[project.no].map(skill => <li key={skill}>{skill}</li>)}</ul><details className="entry-note"><summary>{projectNotes[project.no][0]}</summary><p>{projectNotes[project.no][1]}</p></details>{project.href && <a href={project.href} target="_blank" rel="noreferrer" aria-label={`View repository for ${project.title}`}>View repository <span aria-hidden="true">↗</span></a>}<span className="project-number" aria-hidden="true">{project.no}</span>
+          <h3>{project.title}</h3>{project.no === '02' ? <RankingDemo /> : <ProjectDemo id={project.no} />}<p>{project.body}</p><ul className="project-skills" aria-label="Technical skills">{projectSkills[project.no].map(skill => <li key={skill}>{skill}</li>)}</ul><details className="entry-note"><summary>{projectNotes[project.no][0]}</summary><p>{projectNotes[project.no][1]}</p></details>{project.href && <a href={project.href} target="_blank" rel="noreferrer" aria-label={`View repository for ${project.title}`}>View repository <span aria-hidden="true">↗</span></a>}<span className="project-number" aria-hidden="true">{project.no}</span>
         </article>)}</div>
       </section>
 
