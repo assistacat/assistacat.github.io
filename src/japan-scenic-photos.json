@@ -1,0 +1,121 @@
+{
+  "Lake Hamana": {
+    "src": "/japan-photos/scenic-1.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Hamanako_SA.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "credit": "Kazuhiko Maeda from Tokyo, Japan"
+  },
+  "Mount Tsukuba": {
+    "src": "/japan-photos/scenic-4.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Mount_Tsukuba_2.jpg",
+    "credit": "Polimerek",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "Tottori Sand Dunes": {
+    "src": "/japan-photos/tottori.jpg",
+    "source": "https://find47.jp/en/i/nOdhr.html",
+    "credit": "Kei / FIND/47",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "Fukuroda Falls": {
+    "src": "/japan-photos/fukuroda.jpg",
+    "source": "https://find47.jp/en/i/zO88l",
+    "credit": "SQ0 / FIND/47",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "Lake Tōya": {
+    "src": "/japan-photos/toya.jpg",
+    "source": "https://find47.jp/en/i/nur0p",
+    "credit": "Touyako Town / FIND/47",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "Lake Shikotsu": {
+    "src": "/japan-photos/shikotsu.jpg",
+    "source": "https://find47.jp/en/i/Y5ueg",
+    "credit": "Yo_Takehana / FIND/47",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "Lake Chūzenji": {
+    "src": "/japan-photos/chuzenji.jpg",
+    "source": "https://www.pexels.com/photo/aerial-view-of-mount-nantai-and-lake-chuzenji-29451017/",
+    "credit": "",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/"
+  },
+  "Kegon Waterfalls": {
+    "src": "/japan-photos/kegon.jpg",
+    "source": "https://find47.jp/en/i/MZWpv.html",
+    "credit": "T-KIMURA / FIND/47",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "Lake Towada": {
+    "src": "/japan-photos/towada.jpg",
+    "source": "https://find47.jp/en/i/V1IdX.html",
+    "credit": "SQUAREZERO / FIND/47",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "Lake Tazawa": {
+    "src": "/japan-photos/tazawa.jpg",
+    "source": "https://find47.jp/en/i/rW9AZ.html",
+    "credit": "T-KIMURA / FIND/47",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "Mount Hakodate": {
+    "src": "/japan-photos/hakodate.jpg",
+    "source": "https://find47.jp/en/i/hlbRu",
+    "credit": "aachiii / FIND/47",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "Taisho Ike Pond": {
+    "src": "/japan-photos/taisho-pond.jpg",
+    "source": "https://find47.jp/en/i/RRxKO.html",
+    "credit": "SHori / FIND/47",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "Daisen-Oki National Park": {
+    "src": "/japan-photos/daisen.jpg",
+    "source": "https://find47.jp/en/i/ShVVH",
+    "credit": "rikky_photography / FIND/47",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "Mount Asama": {
+    "src": "/japan-photos/mount-asama.jpg",
+    "source": "https://find47.jp/en/i/PVXeQ",
+    "credit": "suzuhiro / FIND/47",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "Mount Takao": {
+    "src": "/japan-photos/takao.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Mount_Takao_hike_in_January.jpg",
+    "credit": "",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  "Lake Yamanaka": {
+    "src": "/japan-photos/yamanaka.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Yamanakako_Lake.jpg",
+    "credit": "Jordy Meow",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
+  },
+  "Mount Yoshino": {
+    "src": "/japan-photos/yoshino.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Yoshino-yama_2008_banner.jpg",
+    "credit": "Tawashi2006; banner by 8-hachiro",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  }
+}
