@@ -1,13 +1,40 @@
 import { useState } from 'react';
 import JapanMap from './JapanMap';
 const projects = [
-  { no: '01', type: 'TEAM PROJECT · BT3103', title: 'StudySpot', tag: 'CAMPUS LIFE', body: 'Built noise ratings from student reports to colour campus map pins and rank quieter study spots.', href: 'https://github.com/BT3103AppDev1/L1_Group_19', color: 'mint' },
-  { no: '02', type: 'TEAM PROJECT · BT4222', title: 'Personalised product search', tag: 'RECOMMENDER SYSTEMS', body: 'Improved how shopper activity informed product rankings and evaluated results across 20,000 shoppers.', color: 'peach' },
-  { no: '03', type: 'TEAM PROJECT · BT4211', title: 'Stated preferences vs. actual choices', tag: 'CONSUMER INSIGHT', body: 'Compared stated preferences with actual choices using speed-dating records.', href: 'https://github.com/KTAP8/BrainOverLooksBT4211', color: 'butter' },
-  { no: '04', type: 'NUS DATATHON 2026', title: 'Company peer comparisons', tag: 'DATA STORYTELLING', body: 'Team prototype that groups similar companies for revenue and headcount comparisons.', href: 'https://github.com/wk142003/rowlet-regression', color: 'sky' },
-  { no: '05', type: 'PYTHON · LLM EVALUATION', title: 'FreddyFazbytes', tag: 'TEXT ANALYSIS', body: 'Evaluated AI review moderation by testing prompts and models against labelled Google Maps reviews.', href: 'https://github.com/assistacat/FreddyFazbytes', color: 'cream' },
-  { no: '06', type: 'REACT · FLASK', title: 'TrekSavvy', tag: 'TRAVEL · MAPS', body: 'Trip planner with saved map pins, itineraries and location exports.', href: 'https://github.com/assistacat/treksavvy', color: 'mint' },
+  { no: '01', type: 'TEAM PROJECT · BT3103', title: 'StudySpot', tag: 'CAMPUS LIFE', body: 'Our team built a campus study map. My part was turning student reports into noise ratings, coloured pins and a list of quieter spots.', href: 'https://github.com/BT3103AppDev1/L1_Group_19', color: 'mint' },
+  { no: '02', type: 'TEAM PROJECT · BT4222', title: 'Personalised product search', tag: 'RECOMMENDER SYSTEMS', body: 'Should two shoppers see the same results? I improved how we used past activity, then evaluated the rankings across 20,000 shoppers.', color: 'peach' },
+  { no: '03', type: 'TEAM PROJECT · BT4211', title: 'Stated preferences vs. actual choices', tag: 'CONSUMER INSIGHT', body: 'Our team used speed-dating records to compare what people said they wanted with who they chose to see again.', href: 'https://github.com/KTAP8/BrainOverLooksBT4211', color: 'butter' },
+  { no: '04', type: 'NUS DATATHON 2026', title: 'Company peer comparisons', tag: 'DATA STORYTELLING', body: 'For the NUS datathon, our team built a tool to group similar companies and compare their revenue and headcount.', href: 'https://github.com/wk142003/rowlet-regression', color: 'sky' },
+  { no: '05', type: 'PYTHON · LLM EVALUATION', title: 'FreddyFazbytes', tag: 'TEXT ANALYSIS', body: 'We tested whether AI could flag Google Maps reviews for moderation, comparing prompts and models against labelled examples.', href: 'https://github.com/assistacat/FreddyFazbytes', color: 'cream' },
+  { no: '06', type: 'REACT · FLASK', title: 'TrekSavvy', tag: 'TRAVEL · MAPS', body: 'TrekSavvy brings saved map pins into a trip itinerary, with an export for using them in other mapping tools.', href: 'https://github.com/assistacat/treksavvy', color: 'mint' },
 ];
+
+const projectNotes: Record<string, [string, string]> = {
+  "01": [
+    "My part",
+    "I calculated the average noise rating for each location, used it to colour the map pins, and sorted the quietest places first."
+  ],
+  "02": [
+    "What I compared",
+    "I tested a simpler model and a more complex one using the same information. Both performed similarly at putting relevant products in the top ten."
+  ],
+  "03": [
+    "The question behind it",
+    "We used the choices in the records to check whether survey answers told the same story."
+  ],
+  "04": [
+    "How it works",
+    "Upload a spreadsheet, choose a company, and compare its revenue and headcount with similar businesses."
+  ],
+  "05": [
+    "How we checked it",
+    "We cleaned the review text and compared model predictions with labelled reviews."
+  ],
+  "06": [
+    "What you can do",
+    "Find places on a map, save them as pins, and arrange those pins into an itinerary."
+  ]
+};
 
 const experience = [
   ['2026', 'Murata Electronics Singapore', 'HR Data Analytics Intern'],
@@ -84,8 +111,8 @@ export default function Home() {
         <div className="hero-copy">
           <p className="eyebrow"><span className="status-dot" /> BUSINESS ANALYTICS · NUS · SINGAPORE</p>
           <h1 id="hero-title">Ethan Ong</h1>
-          <p className="intro">Business Analytics student at NUS with internship experience in marketing analytics, HR reporting and workflow automation.</p>
-          <div className="hero-actions"><a className="button primary" href="#work">View analytics work <span>↓</span></a><a className="button text-button" href="mailto:ethanong@u.nus.edu">Email me <span>↗</span></a></div>
+          <p className="intro">Hi, I’m Ethan. I study Business Analytics at NUS. This is where I keep the things I’ve worked on, alongside a growing map of places I’d like to visit.</p>
+          <div className="hero-actions"><a className="button primary" href="#work">Read my work notes <span>↓</span></a><a className="button text-button" href="mailto:ethanong@u.nus.edu">Email me <span>↗</span></a></div>
         </div>
         <div className="hero-art">
           <figure className="portrait"><img src="/ethan-ong.jpg" alt="Ethan Ong on a rocky coastline" fetchPriority="high" /></figure>
@@ -95,20 +122,20 @@ export default function Home() {
       </section>
 
       <section className="work section-pad" id="work" aria-labelledby="work-title">
-        <div className="section-intro"><p className="eyebrow"><Medal>01</Medal> INTERNSHIP WORK</p><h2 id="work-title">Marketing &amp; HR analytics</h2></div>
+        <div className="section-intro"><p className="eyebrow"><Medal>01</Medal> INTERNSHIP WORK</p><h2 id="work-title">Notes from my internships</h2><p className="entry-intro">A few pieces of the work I did at Murata and SPH Media. Step through the diagrams to see how they worked.</p></div>
         <div className="case-grid">
-          <article className="case-card case-green"><div className="case-head"><span>01 · MURATA / HR ANALYTICS</span><Medal>HR</Medal></div><WorkDiagram project={0} /><h3>Attendance reporting pipeline</h3><p>Combined 131 leave files and shift calendars to calculate monthly attendance ratios for Power BI reporting.</p><div className="case-foot"><span>PYTHON</span><span>POWER BI</span><span>HR REPORTING</span></div></article>
-          <article className="case-card case-yellow"><div className="case-head"><span>02 · MURATA / AUTOMATION</span><Medal>FLOW</Medal></div><WorkDiagram project={1} /><h3>Coaching approvals workflow</h3><p>Automated coaching submissions, approvals and learning records for a development programme covering 2,000+ employees.</p><div className="case-foot"><span>POWER APPS</span><span>SHAREPOINT</span><span>PROCESS DESIGN</span></div></article>
-          <article className="case-card case-blue"><div className="case-head"><span>03 · SPH MEDIA / MARKETING</span><Medal>58K</Medal></div><SubscriptionDemo /><h3>B2B subscription analysis</h3><p>Analysed 58,000+ subscriptions to inform B2B pricing and targeting across publications and school segments.</p><div className="case-foot"><span>R</span><span>TABLEAU</span><span>MARKETING</span></div></article>
+          <article className="case-card case-green"><div className="case-head"><span>01 · MURATA / HR ANALYTICS</span><Medal>HR</Medal></div><WorkDiagram project={0} /><h3>Attendance reporting pipeline</h3><p>At Murata, I worked with 131 leave files and employee shift calendars. I built the Python pipeline that turned them into monthly attendance figures.</p><div className="case-foot"><span>PYTHON</span><span>POWER BI</span><span>HR REPORTING</span></div></article>
+          <article className="case-card case-yellow"><div className="case-head"><span>02 · MURATA / AUTOMATION</span><Medal>FLOW</Medal></div><WorkDiagram project={1} /><h3>Coaching approvals workflow</h3><p>I built a Power Apps and SharePoint workflow for a coaching programme covering 2,000+ employees. Here’s how a submission moved through it.</p><div className="case-foot"><span>POWER APPS</span><span>SHAREPOINT</span><span>PROCESS DESIGN</span></div></article>
+          <article className="case-card case-blue"><div className="case-head"><span>03 · SPH MEDIA / MARKETING</span><Medal>58K</Medal></div><SubscriptionDemo /><h3>B2B subscription analysis</h3><p>At SPH Media, I analysed 58,000+ subscriptions in R and Tableau to help the B2B team understand buying patterns.</p><div className="case-foot"><span>R</span><span>TABLEAU</span><span>MARKETING</span></div></article>
         </div>
       </section>
 
       <section className="projects-section section-pad" id="projects" aria-labelledby="projects-title">
-        <div className="section-intro projects-intro"><p className="eyebrow"><Medal>02</Medal> COURSEWORK &amp; SIDE PROJECTS</p><h2 id="projects-title">Selected projects</h2></div>
+        <div className="section-intro projects-intro"><p className="eyebrow"><Medal>02</Medal> COURSEWORK &amp; SIDE PROJECTS</p><h2 id="projects-title">Things I’ve worked on</h2><p className="entry-intro">Coursework, team projects and a trip planner. Open an entry for a little more context.</p></div>
         <div className="project-grid">{projects.map((project) => <article className={`project-card ${project.color}`} key={project.no}>
           <div className="project-head"><Medal>{project.no}</Medal><span>{project.type}</span><span className="project-tag">{project.tag}</span></div>
-          {project.no === '01' && <figure className="project-image"><img src="/studyspot.png" alt="StudySpot campus map with marked study locations and a search panel" loading="lazy" /><figcaption>My contribution: noise ratings that colour the pins and rank quiet spots.</figcaption></figure>}
-          <h3>{project.title}</h3>{project.no === '02' && <RankingDemo />}<p>{project.body}</p>{project.href && <a href={project.href} target="_blank" rel="noreferrer" aria-label={`View repository for ${project.title}`}>View repository <span aria-hidden="true">↗</span></a>}<span className="project-number" aria-hidden="true">{project.no}</span>
+          {project.no === '01' && <figure className="project-image"><img src="/studyspot.png" alt="StudySpot campus map with marked study locations and a search panel" loading="lazy" /><figcaption>The campus map our team built.</figcaption></figure>}
+          <h3>{project.title}</h3>{project.no === '02' && <RankingDemo />}<p>{project.body}</p><details className="entry-note"><summary>{projectNotes[project.no][0]}</summary><p>{projectNotes[project.no][1]}</p></details>{project.href && <a href={project.href} target="_blank" rel="noreferrer" aria-label={`View repository for ${project.title}`}>View repository <span aria-hidden="true">↗</span></a>}<span className="project-number" aria-hidden="true">{project.no}</span>
         </article>)}</div>
       </section>
 
@@ -120,7 +147,7 @@ export default function Home() {
 
       <section className="experience section-pad" id="experience" aria-labelledby="experience-title"><div className="experience-heading"><p className="eyebrow"><Medal>04</Medal> INTERNSHIPS &amp; TEACHING</p><h2 id="experience-title">Experience</h2></div><div className="experience-list">{experience.map(([year, company, role], index) => <article key={company}><span className="experience-year">{year}</span><h3>{company}</h3><p>{role}</p><Medal>{`0${index + 1}`}</Medal></article>)}</div></section>
 
-      <footer className="contact section-pad" id="contact"><div><p className="eyebrow"><Medal>05</Medal> CONTACT</p><h2>Get in touch</h2><p className="contact-summary">For job opportunities, contact me by email or LinkedIn.</p><a className="button contact-button" href="mailto:ethanong@u.nus.edu">Email Ethan <span>↗</span></a></div><div className="contact-links"><a href="https://www.linkedin.com/in/ethanjohnong" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a><a href="https://github.com/assistacat" target="_blank" rel="noreferrer">GitHub <span>↗</span></a><a href="/Ethan_Ong_CV.pdf" target="_blank" rel="noreferrer">Résumé <span>↗</span></a><p>ETHAN ONG · SINGAPORE · 2026</p></div></footer>
+      <footer className="contact section-pad" id="contact"><div><p className="eyebrow"><Medal>05</Medal> CONTACT</p><h2>Say hello</h2><p className="contact-summary">Looking for someone to work on an analytics problem? You can reach me here.</p><a className="button contact-button" href="mailto:ethanong@u.nus.edu">Email Ethan <span>↗</span></a></div><div className="contact-links"><a href="https://www.linkedin.com/in/ethanjohnong" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a><a href="https://github.com/assistacat" target="_blank" rel="noreferrer">GitHub <span>↗</span></a><a href="/Ethan_Ong_CV.pdf" target="_blank" rel="noreferrer">Résumé <span>↗</span></a><p>ETHAN ONG · SINGAPORE · 2026</p></div></footer>
     </main>
   </>;
 }

@@ -673,3 +673,33 @@
   .japan-atlas .japan-prefecture-labels text { font-size: 20px; stroke-width: 5px; }
   .japan-atlas .japan-prefecture-labels .is-selected { font-size: 24px; }
 }
+
+/* Personal entries retain the atlas controls and paper palette. */
+.entry-intro { max-width: 56ch; margin: 18px 0 0; color: #4a6256; }
+.entry-note {
+  width: 100%;
+  margin: 0 0 20px;
+  border-top: 1px dashed #8ba08d;
+  padding-top: 8px;
+  position: relative;
+  z-index: 1;
+}
+.entry-note summary {
+  min-height: 44px;
+  display: list-item;
+  align-content: center;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  color: #205c47;
+}
+.entry-note p { font-size: 14px; line-height: 1.6; color: #385345; margin: 5px 0 8px; }
+.entry-note summary:hover { text-decoration: underline; text-underline-offset: 3px; }
+.entry-note[open] { border-top-style: solid; }
+.project-card > p { line-height: 1.65; }
+.case-card > p { line-height: 1.65; }
+.hero-copy .intro { max-width: 40ch; }
+.section-intro .entry-intro { font-size: 15px; }
+
+.project-card > .project-head { flex-shrink: 0; }
+.project-card > .project-image { width: 100%; flex-shrink: 0; }
